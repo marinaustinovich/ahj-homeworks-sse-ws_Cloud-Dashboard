@@ -1,0 +1,147 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+  
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 20px;
+}
+
+.cloud-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.instances-widget, .worklog-widget {
+  width: 45%;
+  min-height: 400px;
+  background-color: #d9d1d1;
+  border: 1px solid #ccc;
+  border-radius: 1.5rem;
+  padding: 2rem;
+}
+
+.instances-widget h3, .worklog-widget h3  {
+  margin-top: 0;
+}
+
+.instances-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.instance-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.instance-name {
+  font-weight: bold;
+  flex-grow: 1;
+  margin-bottom: 10px;
+}
+
+.instances-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  list-style: none;
+}
+
+.status {
+  margin-bottom: 0.5rem;
+}
+
+.status-title {
+  margin-right: 0.5rem;
+}
+
+.status-icon-running, .status-icon-stop {
+  font-weight: bold;
+}
+
+.status-icon-running::before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: green;
+  margin-right: 10px;
+}
+
+.status-icon-stop::before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: rgb(15, 15, 15);
+}
+
+.instances-list li button {
+  margin-top: 10px;
+}
+
+.instance-start, .instance-stop, .instance-close {
+  font-size: 1.25rem;
+  border: none;
+  background-color: #d9d1d1;
+}
+
+.instance-start:hover, .instance-stop:hover, .instance-close:hover {
+  font-size: 1.35rem;
+}
+
+.add-instance {
+  border: none;
+  border-bottom: 1px solid black;
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 1rem;
+  background-color: #d9d1d1;
+  padding: 0.5rem;
+}
+
+.add-instance:hover {
+  font-size: 1.25rem;
+}
+
+/* worklog*/
+
+.worklog-widget {
+  padding: 2rem;
+}
+
+.worklog-list {
+  font-size: 0.75rem;
+  height: calc(100% - 50px); /* 50px - высота заголовка */
+  margin-top: 10px; /* отступ сверху */
+  overflow-y: scroll; /* добавление скролла */
+}
+
+.worklog-item {
+  margin-bottom: 20px;
+}
+
+.worklog-name {
+  flex-grow: 1;
+}
+
+.worklog-timestamp {
+  margin-bottom: 10px;
+}
