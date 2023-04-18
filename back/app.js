@@ -95,7 +95,6 @@ router.put('/instances/:id', async (ctx, next) => {
 
 // Обработчик запроса для удаления сервера
 router.delete('/instances/:id', async (ctx, next) => {
-
   const serverId = ctx.params.id;
   await sendMessageToClients('Received', serverId, `"Remove command"`);
   setTimeout(async () => {

@@ -35,7 +35,8 @@ function handleMessage(event) {
   }
 }
 
-function handleClose() {
+function handleClose(event) {
+  console.log(event)
   /* eslint-disable */
   console.log('Disconnected from WebSocket server');
 }
@@ -50,6 +51,6 @@ export default function connect() {
 
   socket.addEventListener('open', (event) => handleOpen(event, socket));
   socket.addEventListener('message', (event) => handleMessage(event));
-  socket.addEventListener('close', handleClose);
-  socket.addEventListener('error', handleError);
+  socket.addEventListener('close', (event) => handleClose(event));
+  socket.addEventListener('error', (event) => handleError(event));
 }

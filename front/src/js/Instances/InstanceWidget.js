@@ -35,11 +35,12 @@ export default class InstanceWidget {
 
   events() {
     const addBtn = this.widget.querySelector('.add-instance');
-    addBtn.addEventListener('click', async () => await fetchCreated());
+    addBtn.addEventListener('click', () => fetchCreated());
   }
 
   addInstance(result) {
     const instancesList = this.widget.querySelector('.instances-list');
     const instance = new Instance(result, instancesList);
+    console.log(instance);
   }
 }
