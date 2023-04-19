@@ -1,4 +1,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/75c25twj9stl5u4e/branch/main?svg=true)](https://ci.appveyor.com/project/marinaustinovich/ahj-homeworks-sse-ws-cloud-dashboard/branch/main)
+ 
+deployment: https://marinaustinovich.github.io/ahj-homeworks-sse-ws_Cloud-Dashboard/
 
 ## Cloud Dashboard
 

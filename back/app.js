@@ -64,13 +64,18 @@ router.get('/public', async (ctx) => {
 // Обработчик запроса для создания нового сервера
 router.post('/instances', async (ctx, next) => {
   const id = uuidv4();
-  await sendMessageToClients('Received', id, `"Create command"`);
-  setTimeout(async () => {
-    await createInstance(id);
-    await sendMessageToClients('Created', id);
-  }, 5000);
-  ctx.body = { status: 'ok' };
-  await next();
+  try {
+    await sendMessageToClients('Received', id, `"Create command"`);
+    setTimeout(async () => {
+      await createInstance(id);
+      await sendMessageToClients('Created', id);
+    }, 5000);
+    ctx.body = { status: 'ok' };
+    await next();
+  } catch (error) {
+    console.error(error)
+  }
+
 });
 
 // Обработчик запроса для обновления существующего сервера
