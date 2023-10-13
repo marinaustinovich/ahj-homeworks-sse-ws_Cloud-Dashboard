@@ -23,7 +23,7 @@ export default class WidgetAPI {
   }
 
   static subscribeOnServerEvents(eventHandler) {
-    const eventSource = new EventSource('http://cloud-dachboard.onrender.com/sse');
+    const eventSource = new EventSource('https://cloud-dachboard.onrender.com/sse');
 
     eventSource.onmessage = (event) => {
       const data = JSON.parse(event.data);
