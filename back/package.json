@@ -1,23 +1,21 @@
 {
-  "name": "back",
+  "name": "chat-backend",
   "version": "1.0.0",
-  "description": "back-end for the third task (lesson sse, ws and instances)",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node server.js"
   },
-  "keywords": [
-    "ws",
-    "sse"
-  ],
-  "author": "Marina",
+  "author": "Netology",
   "license": "ISC",
+  "engines": {
+    "node": ">=16.0.0 <19.0.0"
+  },
+  "type": "module",
   "dependencies": {
-    "@koa/cors": "^4.0.0",
-    "koa": "^2.14.2",
-    "koa-body": "^6.0.1",
-    "koa-router": "^12.0.0",
-    "uuid": "^9.0.0",
-    "ws": "^8.13.0"
+    "body-parser": "1.20.2",
+    "cors": "2.8.5",
+    "express": "4.18.2",
+    "ws": "8.13.0"
   }
 }

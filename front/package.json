@@ -1,6 +1,6 @@
 {
   "name": "front",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "front-end about the third task (lesson WS, SSE and instances)",
   "main": "index.js",
   "scripts": {
