@@ -1,0 +1,13 @@
+
+.worklog-item {
+    margin-bottom: 20px;
+  }
+  
+  .worklog-name {
+    flex-grow: 1;
+  }
+  
+  .worklog-timestamp {
+    margin-bottom: 10px;
+  }
+  

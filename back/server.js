@@ -68,8 +68,8 @@ app.post("/", async (request, response) => {
     .end();
 });
 
-app.delete("/", (request, response) => {
-  const { id } = request.query;
+app.delete("/:id", (request, response) => {
+  const { id } = request.params;
 
   const instance = store.instances.find((instance) => instance.id === id);
   if (!instance) {

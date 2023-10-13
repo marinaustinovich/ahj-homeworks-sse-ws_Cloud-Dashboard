@@ -1,0 +1,59 @@
+.instances-widget {
+  width: 45%;
+  min-height: 400px;
+  background-color: #d9d1d1;
+  border: 1px solid #ccc;
+  border-radius: 1.5rem;
+  padding: 2rem;
+}
+
+.instances-widget h3 {
+  margin-top: 0;
+}
+
+.instances-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.instance-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.instance-name {
+  font-weight: bold;
+  flex-grow: 1;
+  margin-bottom: 10px;
+}
+
+.instances-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  list-style: none;
+}
+
+.instances-list li button {
+  margin-top: 10px;
+}
+
+.add-instance {
+  border: none;
+  border-bottom: 1px solid black;
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-size: 1rem;
+  background-color: #d9d1d1;
+  padding: 0.5rem;
+}
+
+.add-instance:hover {
+  font-size: 1.25rem;
+}

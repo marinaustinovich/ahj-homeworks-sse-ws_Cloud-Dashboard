@@ -1,0 +1,19 @@
+.worklog-widget {
+    width: 45%;
+    min-height: 400px;
+    background-color: #d9d1d1;
+    border: 1px solid #ccc;
+    border-radius: 1.5rem;
+    padding: 2rem;
+  }
+  
+ .worklog-widget h3  {
+    margin-top: 0;
+  }
+  
+  .worklog-list {
+    font-size: 0.75rem;
+    height: calc(100% - 50px); 
+    margin-top: 10px; 
+    overflow-y: scroll; 
+  }
