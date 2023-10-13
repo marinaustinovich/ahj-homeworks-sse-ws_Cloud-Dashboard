@@ -1,32 +1,28 @@
 import createRequest from './createRequest';
 
 export default class WidgetAPI {
-  constructor(entityPath) {
-    this.entityPath = entityPath;
-  }
-
-  list() {
+  static list() {
     return createRequest({
       method: 'GET',
       path: '/',
     });
   }
 
-  create() {
+  static create() {
     return createRequest({
       method: 'POST',
       path: '/',
     });
   }
 
-  delete(id) {
+  static delete(id) {
     return createRequest({
       method: 'DELETE',
       path: `/${id}`,
     });
   }
 
-  subscribeOnServerEvents(eventHandler) {
+  static subscribeOnServerEvents(eventHandler) {
     const eventSource = new EventSource('http://localhost:3000/sse');
 
     eventSource.onmessage = (event) => {

@@ -1,25 +1,24 @@
-import "./instance.css";
+import WidgetAPI from '../api/WidgetAPI';
+import './instance.css';
 
 export default class Instance {
-  constructor(data, ws, api) {
+  constructor(data, ws) {
     this.data = data;
     this.ws = ws;
-    this.api = api;
-    this.instance = document.createElement("li");
+    this.instance = document.createElement('li');
     this.init();
     this.registerWebSocketListeners();
   }
 
   init() {
-    this.instance.classList.add("instance-item");
+    this.instance.classList.add('instance-item');
     this.updateUI();
   }
 
   updateUI() {
-    const classStatus =
-      this.data.state === "running"
-        ? "status-icon-running"
-        : "status-icon-stop";
+    const classStatus = this.data.state === 'running'
+      ? 'status-icon-running'
+      : 'status-icon-stop';
     this.instance.innerHTML = `
       <span class="instance-name">${this.data.id}</span>
       <div class="status">
@@ -29,11 +28,11 @@ export default class Instance {
       <div class="actions">
         <span class="status-title">Actions:</span>
         <button class="instance-start" aria-label="start instance" ${
-          this.data.state === "running" ? 'style="display:none;"' : ""
-        }>▶</button>
+  this.data.state === 'running' ? 'style="display:none;"' : ''
+}>▶</button>
         <button class="instance-stop" aria-label="stop instance" ${
-          this.data.state === "stopped" ? 'style="display:none;"' : ""
-        }>&#9208</button>
+  this.data.state === 'stopped' ? 'style="display:none;"' : ''
+}>&#9208</button>
         <button class="instance-close" aria-label="close instance">&#10006;</button>
       </div>
     `;
@@ -41,13 +40,13 @@ export default class Instance {
   }
 
   registerEvents() {
-    const startBtn = this.instance.querySelector(".instance-start");
-    const stopBtn = this.instance.querySelector(".instance-stop");
-    const closeBtn = this.instance.querySelector(".instance-close");
+    const startBtn = this.instance.querySelector('.instance-start');
+    const stopBtn = this.instance.querySelector('.instance-stop');
+    const closeBtn = this.instance.querySelector('.instance-close');
 
-    startBtn.addEventListener("click", async () => this.sendMessage("start"));
-    stopBtn.addEventListener("click", async () => this.sendMessage("stop"));
-    closeBtn.addEventListener("click", async () => this.close());
+    startBtn.addEventListener('click', async () => this.sendMessage('start'));
+    stopBtn.addEventListener('click', async () => this.sendMessage('stop'));
+    closeBtn.addEventListener('click', async () => this.close());
   }
 
   sendMessage(action) {
@@ -58,7 +57,7 @@ export default class Instance {
 
   registerWebSocketListeners() {
     if (this.ws) {
-      this.ws.addEventListener("message", (event) => {
+      this.ws.addEventListener('message', (event) => {
         const updatedInstance = JSON.parse(event.data);
         if (updatedInstance.id === this.data.id) {
           this.data = updatedInstance;
@@ -74,11 +73,10 @@ export default class Instance {
   }
 
   async close() {
-    console.log("close");
     try {
-      await this.api.delete(this.data.id);
+      await WidgetAPI.delete(this.data.id);
     } catch (error) {
-      console.error("Error deleting instance:", error);
+      console.error('Error deleting instance:', error);
     }
   }
 
