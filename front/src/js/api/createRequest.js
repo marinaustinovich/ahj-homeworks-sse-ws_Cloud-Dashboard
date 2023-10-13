@@ -6,7 +6,7 @@ const createRequest = async (options) => {
     headers = { 'Content-Type': 'application/json' },
   } = options;
 
-  const url = `http://localhost:3000${path}`;
+  const url = `https://cloud-dachboard.onrender.com${path}`;
 
   const response = await fetch(url, {
     method,

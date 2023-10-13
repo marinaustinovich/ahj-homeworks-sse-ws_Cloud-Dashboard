@@ -63,7 +63,7 @@ export default class InstanceWidget {
   }
 
   onEnterChatHandler() {
-    this.websocket = new WebSocket('ws://localhost:3000');
+    this.websocket = new WebSocket('wss://cloud-dachboard.onrender.com');
     this.subscribeOnEvents();
   }
 
